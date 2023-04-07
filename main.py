@@ -16,8 +16,8 @@ from data import load
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Load a CSV file into a variable.')
-    parser.add_argument('file_name', type=str, help='the name of the CSV file to load')
-    parser.add_argument('variable', type=str, help='the name of the variable to assign the CSV data to')
+    parser.add_argument(r'C:\Users\Qk\Documents\College\02. Programming Fundamentals\Assignment\Python\Big Project\Tubes-Daspro\file\candi.csv', type=str, help='the name of the CSV file to load')
+    parser.add_argument('pembuat', type=str, help='the name of the variable to assign the CSV data to')
     args = parser.parse_args()
 
     load(args.file_name, args.variable)
