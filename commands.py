@@ -12,7 +12,7 @@ def run(inputan, users, candi, bahan_bangunan, role):
     elif inputan == "logout":
         logout(role)
     
-    elif inputan == "summonjin":
+    elif inputan == "summonjin" and role[0] == "Bondowoso":
         summonjin(users)
 
 def login(user, role):
@@ -34,7 +34,7 @@ def login(user, role):
             lokasi = i
     if username_checker and password == user[lokasi][1]: #Jika username dan password sesuai, maka login berhasil dan ubah role menjadi username untuk menandai bahwa saat ini dalam posisi sudah login
 
-        print(f"Selamat datang, {username}!")
+        print(f"\nSelamat datang, {username}!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
 
         role[0] = username
@@ -42,9 +42,9 @@ def login(user, role):
         active_user = role[0]
 
     elif username_checker and password != user[lokasi][1]:  # Jika username benar tapi password salah, maka tampilkan bahwa password salah
-        print("Password salah!")
+        print("\nPassword salah!")
     else: # Jika username tidak terdaftar, maka tampilkan pesannya
-        print("Username tidak terdaftar!")
+        print("\nUsername tidak terdaftar!")
         
 def logout(role):
     if role[0] != 0:            # Jika sudah login, maka bisa logout
