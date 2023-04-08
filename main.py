@@ -22,7 +22,7 @@ users = load(r"file\user.csv", users) # Matrix data user
 candi = load(r"file\candi.csv", candi) # Matrix data user
 bahan_bangunan = load(r"file\bahan_bangunan.csv", bahan_bangunan) # Matrix data user
 
-role = [0] # Untuk menentukan apakah ada user yang sedang login atau tidak
+role = [0,0] # Untuk menentukan apakah ada user yang sedang login atau tidak
 
 iterasi = 0 
 

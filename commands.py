@@ -2,18 +2,32 @@ from functions import *
 
 def run(inputan, users, candi, bahan_bangunan, role):
 
-    if inputan == "login" and role[0] != 0:     # Jika sudah login, maka tidak bisa login
-        print("Login gagal!")
-        print(f"Anda telah login dengan username {role[0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
+    if inputan == "help":
+        help(role)
 
-    elif inputan == "login" and role[0] == 0:   # Jika belum login, maka bisa login
-        login(users, role)
+    elif inputan == "login":
+
+        if role[0] != 0:     # Jika sudah login, maka tidak bisa login
+            print("Login gagal!")
+            print(f"Anda telah login dengan username {role[0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
+
+        else: # Jika belum login, maka bisa login
+            login(users, role)
 
     elif inputan == "logout":
         logout(role)
     
-    elif inputan == "summonjin" and role[0] == "Bondowoso":
-        summonjin(users)
+    elif inputan == "summonjin":
+
+        if role[0] == "Bondowoso":
+            if len_count(users) > 103:
+                print("Jumlah jin sudah mencapai batas maksimal!")
+            
+            else:
+                summonjin(users)
+        else:
+            print("Kamu tidak memiliki akses untuk command summonjin!")
+            
 
 def login(user, role):
 
@@ -38,8 +52,7 @@ def login(user, role):
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
 
         role[0] = username
-
-        active_user = role[0]
+        role[1] = user[lokasi][2]
 
     elif username_checker and password != user[lokasi][1]:  # Jika username benar tapi password salah, maka tampilkan bahwa password salah
         print("\nPassword salah!")
@@ -53,7 +66,6 @@ def logout(role):
     else:
         print("Logout gagal!")  # Jika belum login, maka tidak bisa logout
         print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout.")
-
 
 def summonjin(users):
 
@@ -118,6 +130,20 @@ def summonjin(users):
 
     users[:] = temp_users
 
-
+def help(role):
     
+    if role[1] == 0:
+        print("Menu help blum login")
+    
+    elif role[1] == "bandung_bondowoso":
+        print("Menu help bandung bondowoso")
+
+    elif role[1] == "roro_jonggrang":
+        print("Menu help roro jonggrang")
+
+    elif role[1] == "Pengumpul":
+        print("Menu help jin pengumpul")
+
+    else: # role[1] == "Pembangun"
+        print("Menu help jin pembangun")
 
