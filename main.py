@@ -3,7 +3,11 @@ import commands
 import argparse
 from data import load
 
+import os
+
 from functions import *
+
+os.system("cls")
 
 # Anggap semua fungsi yang dipanggil merupakan fungsi yang sudah dibuat sendiri pada modul lain
 users = [] # Matriks data user
@@ -20,9 +24,19 @@ bahan_bangunan = load(r"file\bahan_bangunan.csv", bahan_bangunan) # Matrix data 
 
 role = [0] # Untuk menentukan apakah ada user yang sedang login atau tidak
 
+iterasi = 0 
+
 # Menerima masukan
 while True:
-    masukan = input(">>> ")
+
+    if iterasi == 0:
+        masukan = input(">>> ")
+
+    else:
+        masukan = input("\n>>> ")
+
+    iterasi += 1
+
     commands.run(masukan,users,candi,bahan_bangunan,role)
     
     N = len_count(users)
