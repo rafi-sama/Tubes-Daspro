@@ -6,3 +6,6 @@ def len_count(x):
         N += 1
     
     return N
+
+
+#ahhhhh
