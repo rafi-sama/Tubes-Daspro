@@ -51,8 +51,8 @@ def login(user, role):
         print(f"\nSelamat datang, {username}!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
 
-        role[0] = username
-        role[1] = user[lokasi][2]
+        role[0] = username #buat username di indeks 0
+        role[1] = user[lokasi][2] #password username di indeks 1/di sebelah kanan username
 
     elif username_checker and password != user[lokasi][1]:  # Jika username benar tapi password salah, maka tampilkan bahwa password salah
         print("\nPassword salah!")
@@ -133,7 +133,7 @@ def summonjin(users):
 def help(role):
     
     if role[1] == 0:
-        print("Menu help blum login")
+        print("Menu help belum login")
     
     elif role[1] == "bandung_bondowoso":
         print("Menu help bandung bondowoso")
