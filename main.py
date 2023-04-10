@@ -38,11 +38,3 @@ while True:
     iterasi += 1
 
     commands.run(masukan,users,candi,bahan_bangunan,role)
-    
-    N = len_count(users)
-
-    for i in range(N):
-        if i != 0:
-            print(users[i])
-            
-            #tes
