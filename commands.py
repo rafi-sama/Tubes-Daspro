@@ -90,7 +90,7 @@ def summonjin(users):
     print("  (2) Pembangun - Bertugas membangun candi")
 
 
-    # INPUT NOMOR JIN
+    # INPUT NOMOR JIN (untuk tipe jin/role jin)
 
     nomor_jin_input = input("\nMasukkan nomor jenis jin yang ingin dipanggil: ") 
 
