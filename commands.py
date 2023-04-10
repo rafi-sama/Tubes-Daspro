@@ -129,7 +129,7 @@ def summonjin(users):
 
         N = len_count(password_jin_input)
         
-        
+
     # Mengappend data baru jin ke users (tanpa .append())
 
     N = len_count(users)
