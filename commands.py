@@ -1,6 +1,6 @@
 from functions import *
 
-def run(inputan, users, candi, bahan_bangunan, role):
+def run(inputan, users, candi, bahan_bangunan, active_user):
 
     # fungi sementara buat liat list user (ntar dihapus)
     if inputan == "listuser":
@@ -10,23 +10,23 @@ def run(inputan, users, candi, bahan_bangunan, role):
             print(users[i])
 
     if inputan == "help":
-        help(role)
+        help(active_user)
 
     elif inputan == "login":
 
-        if role[0] != 0:     # Jika sudah login, maka tidak bisa login
+        if active_user[0] != 0:     # Jika sudah login, maka tidak bisa login
             print("Login gagal!")
-            print(f"Anda telah login dengan username {role[0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
+            print(f"Anda telah login dengan username {active_user[0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
 
         else: # Jika belum login, maka bisa login
-            login(users, role)
+            login(users, active_user)
 
     elif inputan == "logout":
-        logout(role)
+        logout(active_user)
     
     elif inputan == "summonjin":
 
-        if role[0] == "Bondowoso":
+        if active_user[0] == "Bondowoso":
             if len_count(users) > 103:
                 print("Jumlah jin sudah mencapai batas maksimal!")
             
@@ -36,7 +36,7 @@ def run(inputan, users, candi, bahan_bangunan, role):
             print("Kamu tidak memiliki akses untuk command summonjin!")
             
 
-def login(user, role):
+def login(user, active_user):
 
     # Masukkan username dan password
     username = input("Username: ")
@@ -58,18 +58,18 @@ def login(user, role):
         print(f"\nSelamat datang, {username}!")
         print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
 
-        role[0] = username #buat username di indeks 0
-        role[1] = user[lokasi][2] #password username di indeks 1/di sebelah kanan username
+        active_user[0] = username #buat username di indeks 0
+        active_user[1] = user[lokasi][2] #password username di indeks 1/di sebelah kanan username
 
     elif username_checker and password != user[lokasi][1]:  # Jika username benar tapi password salah, maka tampilkan bahwa password salah
         print("\nPassword salah!")
     else: # Jika username tidak terdaftar, maka tampilkan pesannya
         print("\nUsername tidak terdaftar!")
         
-def logout(role):
-    if role[0] != 0:            # Jika sudah login, maka bisa logout
-        print(f"Keluar dari akun dengan username {role[0]}")
-        role[0] = 0
+def logout(active_user):
+    if active_user[0] != 0:            # Jika sudah login, maka bisa logout
+        print(f"Keluar dari akun dengan username {active_user[0]}")
+        active_user[0] = 0
     else:
         print("Logout gagal!")  # Jika belum login, maka tidak bisa logout
         print("Anda belum login, silahkan login terlebih dahulu sebelum melakukan logout.")
@@ -150,9 +150,9 @@ def summonjin(users):
 
     users[:] = temp_users
 
-def help(role):
+def help(active_user):
     
-    if role[1] == 0:
+    if active_user[1] == 0:
         print('''=========== HELP ===========
 1. login
    Untuk masuk menggunakan akun
@@ -164,7 +164,7 @@ def help(role):
    Untuk menampilkan command yang dapat dipanggil
 ============================''')
     
-    elif role[1] == "bandung_bondowoso":
+    elif active_user[1] == "bandung_bondowoso":
         print('''=========== HELP ===========
 1. logout
    Untuk keluar dari akun yang digunakan sekarang
@@ -188,7 +188,7 @@ def help(role):
     Untuk menampilkan command yang dapat dipanggil
 ============================''')
 
-    elif role[1] == "roro_jonggrang":
+    elif active_user[1] == "roro_jonggrang":
         print('''=========== HELP ===========
 1. logout
    Untuk keluar dari akun yang digunakan sekarang
@@ -202,7 +202,7 @@ def help(role):
    Untuk menampilkan command yang dapat dipanggil
 ============================''')
 
-    elif role[1] == "Pengumpul":
+    elif active_user[1] == "Pengumpul":
         print('''=========== HELP ===========
 1. logout
    Untuk keluar dari akun yang digunakan sekarang
