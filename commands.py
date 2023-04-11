@@ -23,6 +23,16 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
 
       for i in range(1,N):
             print(users[i])
+      
+   if inputan == "listbahan":
+      N = arr_len(bahan_bangunan)
+      for i in range(1,N):
+            print(bahan_bangunan[i])
+       
+   if inputan == "listcandi":
+      N = arr_len(candi)
+      for i in range(1,N):
+            print(candi[i])
 
    if inputan == "help":
       f15.help(active_user)
@@ -53,3 +63,6 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
       
    elif inputan == "exit":
       f16.exit()
+
+   elif inputan == "bangun":
+       f06.bangun(active_user, candi, bahan_bangunan)
