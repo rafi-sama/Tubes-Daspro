@@ -28,7 +28,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
       N = arr_len(bahan_bangunan)
       for i in range(1,N):
             print(bahan_bangunan[i])
-       
+      
    if inputan == "listcandi":
       N = arr_len(candi)
       for i in range(1,N):
@@ -65,4 +65,4 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
       f16.exit()
 
    elif inputan == "bangun":
-       f06.bangun(active_user, candi, bahan_bangunan)
+      f06.bangun(active_user, candi, bahan_bangunan)
