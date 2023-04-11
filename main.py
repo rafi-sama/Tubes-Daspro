@@ -1,6 +1,5 @@
 # File: main.py
 import commands
-import argparse
 from data import load
 
 import os
