@@ -8,7 +8,7 @@ def summonjin(users):
     # baris ke-
     # 0 : judul kolom | 1 : data bondowoso | 2 : data roro | 3 dst : data jin
 
-    N = len_count(users)
+    N = arr_len(users)
 
     # membuat array yang berisi nama jin
     # in range(3, N-2) karena data jin pertama kali ada pada baris ke 3
@@ -50,7 +50,7 @@ def summonjin(users):
 
     password_jin_input = input("Masukkan password jin: ")
 
-    N = len_count(password_jin_input)
+    N = str_len(password_jin_input)
     
     # validasi agar password sesuai ketentuan
     while (N < 5 or N > 25):
@@ -59,12 +59,12 @@ def summonjin(users):
 
         password_jin_input = input("Masukkan password jin: ")
 
-        N = len_count(password_jin_input)
+        N = str_len(password_jin_input)
         
 
     # Mengappend data baru jin ke users (tanpa .append())
 
-    N = len_count(users)
+    N = arr_len(users)
 
     temp_users = [0 for i in range(N+1)]
 

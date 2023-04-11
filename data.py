@@ -7,7 +7,7 @@ def load(file_name, variable):
         # mengubah file menjadi bentuk array/list
         reader = [row for row in file]
 
-        baris = len_count(reader)
+        baris = arr_len(reader)
 
         # membuat array kosong sebanyak baris
         tempArr = ["" for i in range(baris)]
