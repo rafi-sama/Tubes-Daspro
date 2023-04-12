@@ -57,7 +57,15 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
                f03.summonjin(users)
       else:
             print("Kamu tidak memiliki akses untuk command summonjin!")
-            
+   
+   elif inputan == "hapusjin":
+      if active_user[0] == "Bondowoso":
+         f04.hapusjin(active_user, users)
+      elif active_user[0] == 0:
+         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
+      else:
+         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah hapusjin")
+         
    elif inputan == "save":
       f14.save()
       
