@@ -65,7 +65,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
    # f04 Hapus Jin
    elif inputan == "hapusjin":
       if active_user[0] == "Bondowoso":
-         f04.hapusjin(active_user, users)
+         f04.hapusjin(active_user, users, candi)
       elif active_user[0] == 0:
          print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
       else:
