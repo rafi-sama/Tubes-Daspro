@@ -1,10 +1,8 @@
 # File: main.py
 import commands
-from data import load
+import function.f13_load as data
 
 import os
-
-from functions import *
 
 os.system("cls")
 
@@ -14,9 +12,9 @@ candi = [] # Matriks data candi
 bahan_bangunan = [] # Data bahan bangunan
 
 # Mengisi users, candi, dan bahan_bangunan menggunakan file
-users = load(r"file\user.csv", users) # Matrix data user
-candi = load(r"file\candi.csv", candi) # Matrix data user
-bahan_bangunan = load(r"file\bahan_bangunan.csv", bahan_bangunan) # Matrix data user
+users = data.load(r"file\user.csv", users) # Matrix data user
+candi = data.load(r"file\candi.csv", candi) # Matrix data user
+bahan_bangunan = data.load(r"file\bahan_bangunan.csv", bahan_bangunan) # Matrix data user
 
 active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau tidak
 
