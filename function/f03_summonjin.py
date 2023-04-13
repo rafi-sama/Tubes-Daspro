@@ -11,8 +11,8 @@ def summonjin(users):
     N = arr_len(users)
 
     # membuat array yang berisi nama jin
-    # in range(3, N-2) karena data jin pertama kali ada pada baris ke 3
-    nama_jin = [users[i][0] for i in range(3, N-2)]
+    # in range(3, N) karena data jin pertama kali ada pada baris ke 3
+    nama_jin = [users[i][0] for i in range(3, N)]
     
     jenis_jin = ["Pengumpul", "Pembangun"] # dengan nomor 0, 1
     nomor_jin = ["1", "2"]
