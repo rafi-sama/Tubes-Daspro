@@ -116,7 +116,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
 
    # f14 Save
    elif inputan == "save":
-      f14.save()
+      f14.save(users, candi, bahan_bangunan)
 
    # f15 Help
    elif inputan == "help":
