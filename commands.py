@@ -129,7 +129,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
 
    # f16 Exi
    elif inputan == "exit":
-      f16.exit()
+      f16.exit(users, candi, bahan_bangunan)
 
    # Command tidak tersedia
    else:
