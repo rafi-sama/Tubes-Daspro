@@ -73,4 +73,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
       f16.exit()
 
    elif inputan == "bangun":
-      f06.bangun(active_user, candi, bahan_bangunan)
+      if active_user[1] == "Pembangun":
+         f06.bangun(active_user, candi, bahan_bangunan)
+      else:
+         print(f"Kamu tidak memiliki akses untuk command bangun")
