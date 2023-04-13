@@ -25,9 +25,6 @@ iterasi = 0
 # Menerima masukan
 while True:
 
-    users = load(r"file\user.csv", users) # Matrix data user
-    candi = load(r"file\candi.csv", candi) # Matrix data user
-    bahan_bangunan = load(r"file\bahan_bangunan.csv", bahan_bangunan) # Matrix data user
     if iterasi == 0:
         masukan = input(">>> ")
 
