@@ -73,7 +73,12 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
    
    # f05 Ubah Jin
    elif inputan == "ubahjin":
-      print("command belum tersedia")
+      if active_user[0] == "Bondowoso":
+         f05.ubahjin(users)
+      elif active_user[0] == 0:
+         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
+      else:
+         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah ubahjin")
 
    # f06 Bangun
    elif inputan == "bangun":
