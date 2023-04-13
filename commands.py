@@ -84,35 +84,35 @@ def run(inputan, users, candi, bahan_bangunan, active_user):
 
    # f07 Kumpul
    elif inputan == "kumpul":
-       print("command belum tersedia")
+      print("command belum tersedia")
    
    # f08 Batch Bangun
    elif inputan == "batchbangun":
-       print("command belum tersedia")
+      print("command belum tersedia")
    
    # f08 Batch Kumpul
    elif inputan == "batchkumpul":
-       print("command belum tersedia")
+      print("command belum tersedia")
 
    # f09 Laporan Jin
    elif inputan == "laporanjin":
-       print("command belum tersedia")
+      print("command belum tersedia")
 
    # f10 Laporan Candi
    elif inputan == "laporancandi":
-       print("command belum tersedia")
+      print("command belum tersedia")
 
    # f11 Hancurkan Candi
    elif inputan == "hancurkancandi":
-       print("command belum tersedia")
-
+      f11.hancurkan(candi, active_user)
+      
    # f12 Ayam Berkokok
    elif inputan == "ayamberkokok":
-       print("command belum tersedia")
+      print("command belum tersedia")
 
    # f13 Load
    elif inputan == "load":
-       print("command belum tersedia")
+      print("command belum tersedia")
 
    # f14 Save
    elif inputan == "save":
