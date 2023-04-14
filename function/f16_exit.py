@@ -11,4 +11,3 @@ def exit(users, candi, bahan_bangunan):
         else:
             print("Input (y/n) untuk melakukan save atau tidak.")
             choice = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)\n")
-    return False
