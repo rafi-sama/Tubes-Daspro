@@ -89,7 +89,10 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
 
    # f07 Kumpul
    elif inputan == "kumpul":
-      print("command belum tersedia")
+      if active_user[1] == "Pengumpul":
+         f07.kumpul(bahan_bangunan)
+      else:
+         print(f"Kamu tidak memiliki akses untuk command bangun")
    
    # f08 Batch Bangun
    elif inputan == "batchbangun":
