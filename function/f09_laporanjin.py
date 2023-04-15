@@ -40,7 +40,7 @@ def LaporanJin (list_jin,users, candi):
             if item < awal:
                 awal = item
                 
-    min_count = float("inf")
+    min_count = float("inf")        #mencari nama jin dengan jumlah kemunculan terkecil
     J_malas = []
     for g in count:
         if count[g] < min_count:
@@ -75,7 +75,7 @@ def LaporanJin (list_jin,users, candi):
     print(f"Total JIn Pengumpul: {J_kumpul} \n")
     print(f"Total Jin Pembangun: {J_bangun} \n")
     print(f"Jin Terajin: {J_rajin} \n")
-    print(f"JIn Termalas: {J_malas} \n")
+    print(f"JIn Termalas: {J_malas} \n")        #output
     print(f"Jumlah Pasir: {total_pasir} \n")
     print(f"Jumlah Air: {total_air} \n")
     print(f"Jumlah Batu: {total_batu} \n")
