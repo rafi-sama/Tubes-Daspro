@@ -1,4 +1,5 @@
 from functions import *
+import function.b01_randomgenerator as b01
 import random
 
 def isCukup(pasir, batu, air, bahan_bangunan):
@@ -11,9 +12,9 @@ def isCukup(pasir, batu, air, bahan_bangunan):
 
 def bangun(active_user, candi, bahan_bangunan):
 
-    pasir = random.randint(0,5)
-    batu = random.randint(0,5)
-    air = random.randint(0,5)
+    pasir = b01.generate_angka_random()
+    batu = b01.generate_angka_random()
+    air = b01.generate_angka_random()
 
     if isCukup(pasir, batu, air, bahan_bangunan):
 
