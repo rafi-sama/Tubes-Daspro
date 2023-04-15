@@ -69,8 +69,6 @@ def LaporanJin (list_jin,users, candi):
     
        
         
-    
-        
     print(f"Total Jin: {J_total} \n")
     print(f"Total JIn Pengumpul: {J_kumpul} \n")
     print(f"Total Jin Pembangun: {J_bangun} \n")
