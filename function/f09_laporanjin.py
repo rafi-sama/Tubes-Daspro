@@ -17,11 +17,11 @@ def LaporanJin (list_jin,users, candi):
     J_total = J_bangun + J_kumpul
     
     count = {}
-    for i in range(1, len(users)):
-        if users[i][1] in count:       #Menghitung Jumlah Kemunculan semua data di kolom kedua dalam list candi, yaitu nama jin
-            count[users[i][1]] += 1
+    for i in range(1, len(candi)):
+        if candi[i][1] in count:       #Menghitung Jumlah Kemunculan semua data di kolom kedua dalam list candi, yaitu nama jin
+            count[candi[i][1]] += 1
         else:
-            count[users[i][1]] = 1
+            count[candi[i][1]] = 1
 
 
     max_count = 0
@@ -39,16 +39,47 @@ def LaporanJin (list_jin,users, candi):
         for item in J_rajin:
             if item < awal:
                 awal = item
-            
+                
+    min_count = float("inf")
+    J_malas = []
+    for g in count:
+        if count[g] < min_count:
+            min_count = count[g]
         
-        
+        elif count[g] == min_count:
+            konso([J_malas],g)
             
+            
+    if len(J_malas) > 1:        # jika jin termalas yang didapat lebih dari satu
+        awal = J_malas[0]       # menentukan leksiografis tertinggi dari list jin termalas
+        for item in J_malas:
+            if item > awal:
+                awal = item
+            
+
+    total_pasir = 0
+    total_batu = 0                    #semua bahan-bahan dibikin 0 dulu
+    total_air = 0
+
+    for row in candi[1:]:
+        total_pasir += int(row[2])
+        total_batu += int(row[3])           #iterasi dari baris kedua hingga akhir dalam candi, dimana tiap data
+        total_air += int(row[4])            #dari kolom tersebut ditambahkan
+
     
+       
+        
     
+        
     print(f"Total Jin: {J_total} \n")
     print(f"Total JIn Pengumpul: {J_kumpul} \n")
     print(f"Total Jin Pembangun: {J_bangun} \n")
     print(f"Jin Terajin: {J_rajin} \n")
+    print(f"JIn Termalas: {J_malas} \n")
+    print(f"Jumlah Pasir: {total_pasir} \n")
+    print(f"Jumlah Air: {total_air} \n")
+    print(f"Jumlah Batu: {total_batu} \n")
+       
+            
     
     
-LaporanJin()
