@@ -10,3 +10,4 @@ def kumpul(bahan): #Fungsi mengumpulkan bahan bangunan
     bahan[3][2] = str(int(bahan[3][2]) + air) #menambahkan air yang diambil ke list bahan bangunan
     print(f"Jin menemukan {pasir} pasir, {batu} batu, dan {air} air.") #tampilan pada layar jumlah pasir, batu, dan air yang diambil
 
+
