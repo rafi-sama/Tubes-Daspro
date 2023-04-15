@@ -25,11 +25,25 @@ def LaporanJin (list_jin,users, candi):
 
 
     max_count = 0
-    J_rajin = ""
-    for key in count:
-        if count[key] > max_count:
-            max_count = count[key]     # Mencari nama jin dengan jumlah kemunculan terbanyak
-            J_rajin = key
+    J_rajin = []
+    for g in count:
+        if count[g] > max_count:
+            max_count = count[g]     # Mencari nama jin dengan jumlah kemunculan terbanyak
+            J_rajin = [g]
+        
+        elif count[g] == max_count:
+            konso([J_rajin],g)
+            
+    if len(J_rajin) > 1:     #syarat jin ter-rajin yang didapat lebih dari satu
+        awal = J_rajin[0]       # menentukan leksiografis terendah dari list jin ter-rajin
+        for item in J_rajin:
+            if item < awal:
+                awal = item
+            
+        
+        
+            
+    
     
     print(f"Total Jin: {J_total} \n")
     print(f"Total JIn Pengumpul: {J_kumpul} \n")
