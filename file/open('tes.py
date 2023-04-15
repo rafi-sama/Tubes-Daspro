@@ -1,0 +1,2 @@
+open('tes.txt')
+
