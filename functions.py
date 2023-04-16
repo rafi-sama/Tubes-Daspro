@@ -59,16 +59,18 @@ def str_len(string):
 # fungsi yang menentukan panjang array
 def arr_len(arr):
 
-    temp = arr
-
-    if temp == []:
+    if arr == []:
         return 0
+    
+    temp = arr[-1]
 
-    temp[-1] = "*"
+    arr[-1] = "*"
 
     for i in range(1000):
 
-        if temp[i] == "*":
+        if arr[i] == "*":
+
+            arr[-1] = temp
 
             return i+1
 
