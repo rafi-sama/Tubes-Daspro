@@ -34,7 +34,8 @@ x = [["id","pembuat","pasir","batu","air"],
      ["1","kirito","2","3","4"],
      ['2','asuna','4','1','3'],
      ['3','rimuru','3','1','3'],
-     ['4','tempest','1','2','4']]
+     ['4','tempest','1','2','4'],
+     ['5','ud','5','6','3']]
 
 
 
@@ -66,21 +67,51 @@ for i in range (1,arr_len(x)):    #masukkan semua data bahan dalam variable list
 
 
 #2: perhitungan
-for i in range(5):
-    total_i = 10000*arr_pasir[0]
+c = 0
+
+for i in range(arr_len(arr_air)):
+    total_i = 10000*(int(arr_pasir[c])) + 15000*(int(arr_batu[c])) + 7500*(int(arr_air[c])) 
+    harga_candi += [total_i]  
+    c += 1
+    
+    
+maks = harga_candi[0]   
+min = harga_candi[0]
+for c in harga_candi:
+    if c > maks:
+        maks = c
+    elif c < min:
+        min = c    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
 
 if sum_candi == 0:
     total_pasir = 0
     total_batu = 0                    #sebenarnya syarat ini tidak perlu, tapi saya takut akan adanya 
     total_air = 0                     #kesalahan perhitungan
+
+
 candi_mahal = 0
 candi_murah = 0
 print(f"Total Candi: {sum_candi} \n")
 print(f"Total Pasir yang digunakan: {total_pasir} \n")
 print(f"Total Batu yang digunakan: {total_batu} \n")
 print(f"Total Air yang digunakan: {total_air} \n")
-print(f"ID Candi Termahal: {candi_mahal} \n")
-print(f"ID Candi Termurah: {candi_murah} \n")
+print(f"ID Candi Termahal: {maks} \n")
+print(f"ID Candi Termurah: {min} \n")
 
 
 
