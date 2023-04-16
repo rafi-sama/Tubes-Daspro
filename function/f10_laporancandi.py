@@ -19,7 +19,7 @@ def LaporanCandi (candi):
     global arr_air #variable ini berisi list bahan air
     global arr_batu #variable ini berisi list bahan dari batu
     global arr_pasir #variable ini berisi list bahan dari pasir
-    global harga_candi #variable ini berisi list total harga candi dari perhitungan
+    global harga_candi#variable ini berisi list total harga candi dari perhitungan
     
 
 #TOTAL PASIR, AIR,DAN BATU YANG DIGUNAKAN
