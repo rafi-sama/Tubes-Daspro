@@ -33,9 +33,24 @@ def LaporanCandi (candi):
     
    
    #2: perhitungan
-    for i in range():
-        total_i = 10000*arr_pasir[0]
-   
+    c = 0
+    for i in range(arr_len(arr_air)):
+        total_i = 10000*(int(arr_pasir[c])) + 15000*(int(arr_batu[c])) + 7500*(int(arr_air[c])) 
+        harga_candi += [total_i]  
+        c += 1
+        
+    
+    #PENENTUAN CANDI TERBESAR DAN TERKECIL
+    maks = harga_candi[0]   
+    min = harga_candi[0]
+    for c in harga_candi:               #karena list harga_candi sudah dibuat, kita tinggal menentukan data terbesar         
+        if c > maks:                    #atau terkecil dari list tersebut
+            maks = c
+        elif c < min:
+            min = c    
+
+    
+    
     if sum_candi == 0:
         total_pasir = 0
         total_batu = 0                    #sebenarnya syarat ini tidak perlu, tapi saya takut akan adanya 

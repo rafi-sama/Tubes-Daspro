@@ -74,15 +74,16 @@ for i in range(arr_len(arr_air)):
     harga_candi += [total_i]  
     c += 1
     
-    
+#PENENTUAN CANDI TERBESAR DAN TERKECIL
 maks = harga_candi[0]   
 min = harga_candi[0]
-for c in harga_candi:
-    if c > maks:
+for c in harga_candi:               #karena list harga_candi sudah dibuat, kita tinggal menentukan data terbesar         
+    if c > maks:                    #atau terkecil dari list tersebut
         maks = c
     elif c < min:
         min = c    
-
+num_min =  0                       #varb ini berisi urutan/nomor dari candi dengan bahan termurah dan termahal
+num_maks = 0
     
     
     
@@ -110,8 +111,8 @@ print(f"Total Candi: {sum_candi} \n")
 print(f"Total Pasir yang digunakan: {total_pasir} \n")
 print(f"Total Batu yang digunakan: {total_batu} \n")
 print(f"Total Air yang digunakan: {total_air} \n")
-print(f"ID Candi Termahal: {maks} \n")
-print(f"ID Candi Termurah: {min} \n")
+print(f"ID Candi Termahal: {min} Rp: ({maks}) \n")
+print(f"ID Candi Termurah: Rp: ({min}) \n")
 
 
 
