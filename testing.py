@@ -39,7 +39,7 @@ x = [["id","pembuat","pasir","batu","air"],
 
 
 
- #TOTAL CANDI
+#TOTAL CANDI
 sum_candi = arr_len(x) - 1
 total_pasir = 0
 total_batu = 0                    #semua bahan-bahan dibikin 0 dulu

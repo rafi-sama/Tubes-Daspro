@@ -23,7 +23,7 @@ def LaporanCandi (candi):
         i += 1
     
     
-    #ID CANDI TERMAHAL
+    #ID CANDI TERMAHAL & TERKECIL
     #1: Deteksi Bahan                                    
     for i in range (1,arr_len(candi)):    #masukkan semua data bahan dalam variable list
         arr_pasir += (candi[i][2])
@@ -40,11 +40,11 @@ def LaporanCandi (candi):
         c += 1
         
     
-    #PENENTUAN CANDI TERBESAR DAN TERKECIL
+    #3: Penentuan Candi Termahal dan Terkecil
     maks = harga_candi[0]   
     min = harga_candi[0]
-    for c in harga_candi:               #karena list harga_candi sudah dibuat, kita tinggal menentukan data terbesar         
-        if c > maks:                    #atau terkecil dari list tersebut
+    for c in harga_candi:               #karena list harga_candi yang berisi harga-harga pada candi yang dibangun sudah dibuat,        
+        if c > maks:                    #kita tinggal menentukan data terbesar atau terkecil dari list tersebut
             maks = c
         elif c < min:
             min = c    
@@ -59,10 +59,7 @@ def LaporanCandi (candi):
         candi_murah = '-'
     
     
-    #ID CANDI TERMAHAL
 
-
-    #HITUNG HARGA CANDI
         
     
     
