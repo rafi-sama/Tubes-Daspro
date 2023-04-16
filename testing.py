@@ -37,19 +37,19 @@ x = [["id","pembuat","pasir","batu","air"],
      ['4','tempest','1','2','4']]
 
 
-def DetectBahan(candi):
-        c = 1
-        pasir = 0
-        batu = 0
-        air = 0
-        for i in range (1,arr_len(candi)):
-            pasir += int(candi[i][2])
-            batu += int(candi[i][3])
-            air += int(candi[i][4])
-            i += 1
-        return pasir,batu,air
+
+c = 1
+pasir = []
+batu = []
+air = []
+for i in range (1,arr_len(x)):
+    pasir += (x[i][2])
+    batu += (x[i][3])
+    air += (x[i][4])
+    i += 1
 
 
-print(DetectBahan(x))
+
+print(pasir)
 
 
