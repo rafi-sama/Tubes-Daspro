@@ -59,15 +59,18 @@ def str_len(string):
 # fungsi yang menentukan panjang array
 def arr_len(arr):
 
-    len = 0
-    temp = []
+    temp = arr
 
-    while temp != arr:
-        
-        temp = konso(temp, arr[len])
-        len += 1
+    if temp == []:
+        return 0
 
-    return len
+    temp[-1] = "*"
+
+    for i in range(1000):
+
+        if temp[i] == "*":
+
+            return i+1
 
 
 def split(string, delimiter):
