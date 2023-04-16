@@ -1,5 +1,5 @@
 from functions import *
-import random
+
 def LaporanJin (list_jin,users, candi):
     J_bangun = 0
     J_kumpul = 0
