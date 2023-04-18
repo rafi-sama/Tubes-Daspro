@@ -1,6 +1,6 @@
 # File: main.py
 import commands
-import function.f13_load as data
+import command.f13_load as data
 
 import os
 
@@ -21,9 +21,9 @@ active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau ti
 iterasi = 0 
 
 # Menerima masukan
-running = True
-while running:
-
+running = [1]
+while running[0] == 1:
+    
     if iterasi == 0:
         masukan = input(">>> ")
 
@@ -31,6 +31,4 @@ while running:
         masukan = input("\n>>> ")
 
     iterasi += 1
-    running_dict = {'value': running}
-    commands.run(masukan,users,candi,bahan_bangunan,active_user,running_dict)
-    running = running_dict['value']
+    commands.run(masukan,users,candi,bahan_bangunan,active_user, running)

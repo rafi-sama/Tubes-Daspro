@@ -1,22 +1,22 @@
 from functions import *
-import function.f01_login as f01
-import function.f02_logout as f02
-import function.f03_summonjin as f03
-import function.f04_hapusjin as f04
-import function.f05_ubahjin as f05
-import function.f06_bangun as f06
-import function.f07_kumpul as f07
-import function.f08_batchkumpulbangun as f08
-import function.f09_laporanjin as f09
-import function.f10_laporancandi as f10
-import function.f11_hancurkancandi as f11
-import function.f12_ayamberkokok as f12
-import function.f13_load as f13
-import function.f14_save as f14
-import function.f15_help as f15
-import function.f16_exit as f16
+import command.f01_login as f01
+import command.f02_logout as f02
+import command.f03_summonjin as f03
+import command.f04_hapusjin as f04
+import command.f05_ubahjin as f05
+import command.f06_bangun as f06
+import command.f07_kumpul as f07
+import command.f08_batchkumpulbangun as f08
+import command.f09_laporanjin as f09
+import command.f10_laporancandi as f10
+import command.f11_hancurkancandi as f11
+import command.f12_ayamberkokok as f12
+import command.f13_load as f13
+import command.f14_save as f14
+import command.f15_help as f15
+import command.f16_exit as f16
 
-def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
+def run(inputan, users, candi, bahan_bangunan, active_user, running):
    
    # Menampilkan list user
    if inputan == "listuser":
@@ -104,11 +104,11 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
 
    # f09 Laporan Jin
    elif inputan == "laporanjin":
-      print("command belum tersedia")
+      f09.LaporanJin(users, candi, bahan_bangunan)
 
    # f10 Laporan Candi
    elif inputan == "laporancandi":
-      print("command belum tersedia")
+      f10.LaporanCandi(candi)
 
    # f11 Hancurkan Candi
    elif inputan == "hancurkancandi":
@@ -118,7 +118,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
    elif inputan == "ayamberkokok":
       if active_user[0] == "Roro":
          f12.ayamberkokok(candi)
-         running_dict['value'] = False
+         running[0] = 0
       elif active_user[0] == 0:
          print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
       else:
@@ -139,7 +139,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
    # f16 Exi
    elif inputan == "exit":
       f16.exit(users, candi, bahan_bangunan)
-      running_dict['value'] = False
+      running[0] = 0
 
    # Command tidak tersedia
    else:
