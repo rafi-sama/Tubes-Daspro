@@ -111,7 +111,7 @@ def convertToArr(file, delimiter):
     return tempArr
 
 
-def isMember(arr, element):
+def isMember(element, arr):
     
     for i in range(arr_len(arr)):
 

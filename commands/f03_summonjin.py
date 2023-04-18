@@ -27,7 +27,7 @@ def summonjin(users):
     nomor_jin_input = input("\nMasukkan nomor jenis jin yang ingin dipanggil: ") 
 
     # validasi agar inputan nomor jin sesuai
-    while (nomor_jin_input not in nomor_jin):
+    while not(isMember(nomor_jin_input, nomor_jin)):
         
         print(f"\nTidak ada jenis jin bernomor \"{nomor_jin_input}\"!")
         nomor_jin_input = input("\nMasukkan nomor jenis jin yang ingin dipanggil: ") 
@@ -40,7 +40,7 @@ def summonjin(users):
     nama_jin_input = input("\nMasukkan username jin: ")
     
     # validasi agar nama jin tidak ada yang sama
-    while (nama_jin_input in nama_jin):
+    while (isMember(nama_jin_input, nama_jin)):
         
         print(f"Username \"{nama_jin_input}\" sudah diambil!")
         nama_jin_input = input("\nMasukkan username jin: ")
