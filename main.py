@@ -20,12 +20,10 @@ active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau ti
 iterasi = 0 
 
 # Menerima masukan
-running = True
-while running:
+running = [1]
+while running[0] != 0:
 
     command = input(">>> ")
 
-    running_dict = {'value': running}
-    run(command,users,candi,bahan_bangunan,active_user,running_dict)
+    run(command,users,candi,bahan_bangunan,active_user,running)
     print("\n", end="")
-    running = running_dict['value']

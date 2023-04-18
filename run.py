@@ -16,7 +16,7 @@ import commands.f14_save as f14
 import commands.f15_help as f15
 import commands.f16_exit as f16
 
-def run(command, users, candi, bahan_bangunan, active_user, running_dict):
+def run(command, users, candi, bahan_bangunan, active_user, running):
    
    # Menampilkan list user
    if command == "listuser":
@@ -118,7 +118,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running_dict):
    elif command == "ayamberkokok":
       if active_user[0] == "Roro":
          f12.ayamberkokok(candi)
-         # running[0] = 0
+         running[0] = 0
       elif active_user[0] == 0:
          print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
       else:
@@ -139,7 +139,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running_dict):
    # f16 Exi
    elif command == "exit":
       f16.exit(users, candi, bahan_bangunan)
-      # running[0] = 0
+      running[0] = 0
 
    # Command tidak tersedia
    else:
