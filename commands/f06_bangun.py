@@ -1,5 +1,5 @@
 from functions import *
-import function.b01_randomgenerator as b01
+import commands.b01_randomgenerator as b01
 import random
 
 def isCukup(pasir, batu, air, bahan_bangunan):

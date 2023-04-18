@@ -1,4 +1,4 @@
-import function.b01_randomgenerator as b01
+import commands.b01_randomgenerator as b01
 
 def kumpul(bahan): #Fungsi mengumpulkan bahan bangunan
     global bahan_bangunan #mengambil list bahan bangunan dari program utama
