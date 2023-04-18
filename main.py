@@ -18,12 +18,10 @@ bahan_bangunan = data.load(r"file\bahan_bangunan.csv") # Matrix data user
 active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau tidak
 
 # Menerima masukan
-running = True
-while running:
+running = [1]
+while running[0] != 0:
 
     command = input(">>> ")
 
-    running_dict = {'value': running}
-    run(command,users,candi,bahan_bangunan,active_user,running_dict)
+    run(command,users,candi,bahan_bangunan,active_user,running)
     print("\n", end="")
-    running = running_dict['value']
