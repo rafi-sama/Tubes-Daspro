@@ -4,7 +4,9 @@ import random
 
 def isCukup(pasir, batu, air, bahan_bangunan):
 
-    if ((pasir > int(bahan_bangunan[1][2])) or (batu > int(bahan_bangunan[2][2])) or (air > int(bahan_bangunan[3][2]))):
+    if ((pasir > int(bahan_bangunan[1][2]))\
+         or (batu > int(bahan_bangunan[2][2]))\
+              or (air > int(bahan_bangunan[3][2]))):
         return False
     
     else:
