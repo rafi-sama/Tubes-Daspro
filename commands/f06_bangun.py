@@ -27,7 +27,7 @@ def bangun(active_user, candi, bahan_bangunan):
 
         id_candi = arr_len(tempCandi)
 
-        tempCandi = konso(tempCandi, [id_candi, active_user[0], pasir, batu, air])
+        tempCandi = konso(tempCandi, [str(id_candi), active_user[0], str(pasir), str(batu), str(air)])
 
         candi[:] = tempCandi
         bahan_bangunan[:] = tempBahan
