@@ -17,8 +17,6 @@ bahan_bangunan = data.load(r"file\bahan_bangunan.csv") # Matrix data user
 
 active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau tidak
 
-iterasi = 0 
-
 # Menerima masukan
 running = True
 while running:
