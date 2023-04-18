@@ -100,7 +100,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running):
    
    # f08 Batch Kumpul
    elif command == "batchkumpul":
-      print("command belum tersedia")
+      f08.batchkumpul(users, bahan_bangunan)
 
    # f09 Laporan Jin
    elif command == "laporanjin":
