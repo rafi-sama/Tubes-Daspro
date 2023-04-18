@@ -1,6 +1,10 @@
 # File: main.py
 import commands
+<<<<<<< HEAD
 import commands.f13_load as data
+=======
+import command.f13_load as data
+>>>>>>> bb1230600bf9cfe4ed45364e516a4e002505ff04
 
 import os
 os.system("cls")
@@ -20,6 +24,7 @@ active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau ti
 iterasi = 0 
 
 # Menerima masukan
+<<<<<<< HEAD
 running = True
 while running:
 
@@ -29,3 +34,16 @@ while running:
     commands.run(command,users,candi,bahan_bangunan,active_user,running_dict)
     print("\n", end="")
     running = running_dict['value']
+=======
+running = [1]
+while running[0] == 1:
+    
+    if iterasi == 0:
+        masukan = input(">>> ")
+
+    else:
+        masukan = input("\n>>> ")
+
+    iterasi += 1
+    commands.run(masukan,users,candi,bahan_bangunan,active_user, running)
+>>>>>>> bb1230600bf9cfe4ed45364e516a4e002505ff04

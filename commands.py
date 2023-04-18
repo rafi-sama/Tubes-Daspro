@@ -104,11 +104,11 @@ def run(command, users, candi, bahan_bangunan, active_user, running_dict):
 
    # f09 Laporan Jin
    elif command == "laporanjin":
-      print("command belum tersedia")
+      f09.LaporanJin(users, candi, bahan_bangunan)
 
    # f10 Laporan Candi
    elif command == "laporancandi":
-      print("command belum tersedia")
+      f10.LaporanCandi(candi)
 
    # f11 Hancurkan Candi
    elif command == "hancurkancandi":
@@ -118,7 +118,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running_dict):
    elif command == "ayamberkokok":
       if active_user[0] == "Roro":
          f12.ayamberkokok(candi)
-         running_dict['value'] = False
+         # running[0] = 0
       elif active_user[0] == 0:
          print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
       else:
@@ -139,7 +139,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running_dict):
    # f16 Exi
    elif command == "exit":
       f16.exit(users, candi, bahan_bangunan)
-      running_dict['value'] = False
+      # running[0] = 0
 
    # Command tidak tersedia
    else:
