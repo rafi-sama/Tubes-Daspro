@@ -72,7 +72,7 @@ def arr_len(arr):
             arr[-1] = temp
             return i+1
 
-
+# mengubah format file .csv menjadi array
 def convertToArr(file, delimiter):
 
     data = file.readlines()
@@ -110,7 +110,32 @@ def convertToArr(file, delimiter):
 
     return tempArr
 
+# mengubah array menjadi string sesuai format file .csv
+def convertToCSV(arr):
 
+    string = ""
+
+    baris = arr_len(arr)
+    if baris == 0:
+        return string
+    
+    kolom = arr_len(arr[0])
+
+    for i in range(baris):
+        for j in range(kolom):
+
+            string += arr[i][j]
+
+            if j != kolom-1:
+
+                string += ";"
+
+        if i != baris-1:
+            string += "\n"
+
+    return string
+
+# fungsi isMember
 def isMember(element, arr):
     
     for i in range(arr_len(arr)):
