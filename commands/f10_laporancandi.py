@@ -58,7 +58,7 @@ def LaporanCandi (candi):
 
     max_score = -1
     max_id = ''
-    for i in range(1, len(candi)):
+    for i in range(1, arr_len(candi)):
         cur_id = candi[i][0]
         cur_pasir = int(candi[i][2])
         cur_batu = int(candi[i][3])
@@ -71,6 +71,15 @@ def LaporanCandi (candi):
             max_id = cur_id
     
     
+    if candi == 0 or []:
+        print("Total Candi: 0")
+        print("Total Pasir yang digunakan: 0")
+        print("Total Batu yang digunakan: 0")
+        print("Total Air yang digunakan: 0")
+        print("ID Candi Termahal: -")
+        print("ID Candi Termurah: -")
+    
+        
     
     
     
@@ -78,10 +87,6 @@ def LaporanCandi (candi):
     
     
     
-    
-    
-    
-
     
 
 
