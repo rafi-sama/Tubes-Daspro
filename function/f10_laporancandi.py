@@ -1,8 +1,6 @@
 from functions import *
 
-total_pasir = 0
-total_batu = 0                    #semua bahan-bahan dibikin 0 dulu
-total_air = 0
+
 arr_pasir = []  
 arr_batu = []
 arr_air = []

@@ -60,7 +60,7 @@ def LaporanCandi (candi):
 
 #TOTAL PASIR, AIR,DAN BATU YANG DIGUNAKAN
 
-    for i in range (1,arr_len(candi)):    #iterasi dari baris kedua ke baris terakhir
+    for i in range (1,len(candi)):    #iterasi dari baris kedua ke baris terakhir
         total_pasir += int(candi[i][2])
         total_batu += int(candi[i][3])       #penambahan tiap data pada masing-masing bahan
         total_air += int(candi[i][4])        #ke dalam variable yang sudah dikosongkan
@@ -69,7 +69,7 @@ def LaporanCandi (candi):
 
 #ID CANDI TERMAHAL
 #1: Deteksi Bahan                                    
-    for i in range (1,(arr_len(candi)):    #masukkan semua data bahan dalam variable list
+    for i in range (1,(len(candi))):    #masukkan semua data bahan dalam variable list
         arr_pasir += (candi[i][2])
         arr_batu += (candi[i][3])         #proses yang dilakukan sama, namun variable yang dihasilkan
         arr_air += (candi[i][4])          #bertipe nested list seperti pasir = [2,4,3,1], air = [3,5,6,1]
@@ -79,7 +79,7 @@ def LaporanCandi (candi):
 #2: perhitungan
     c = 0
 
-    for i in range(arr_len(arr_air)):
+    for i in range(len(arr_air)):
         total_i = 10000*(int(arr_pasir[c])) + 15000*(int(arr_batu[c])) + 7500*(int(arr_air[c])) 
         harga_candi += [total_i]  
         c += 1
@@ -108,7 +108,16 @@ def LaporanCandi (candi):
             max_id = cur_id
     
     
+    print(f"Total Candi: {len(candi)-1} \n")
+    print(f"Total Pasir yang digunakan: {total_pasir} \n")
+    print(f"Total Batu yang digunakan: {total_batu} \n")
+    print(f"Total Air yang digunakan: {total_air} \n")
+    print(f"ID Candi Termahal: {max_id} (Rp: {maks}) \n")
+    print(f"ID Candi Termurah: (Rp: {min}) \n")
     
+    
+    
+LaporanCandi(candi)
     
     
     
