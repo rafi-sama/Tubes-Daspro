@@ -1,46 +1,46 @@
 from functions import *
-import function.f01_login as f01
-import function.f02_logout as f02
-import function.f03_summonjin as f03
-import function.f04_hapusjin as f04
-import function.f05_ubahjin as f05
-import function.f06_bangun as f06
-import function.f07_kumpul as f07
-import function.f08_batchkumpulbangun as f08
-import function.f09_laporanjin as f09
-import function.f10_laporancandi as f10
-import function.f11_hancurkancandi as f11
-import function.f12_ayamberkokok as f12
-import function.f13_load as f13
-import function.f14_save as f14
-import function.f15_help as f15
-import function.f16_exit as f16
+import commands.f01_login as f01
+import commands.f02_logout as f02
+import commands.f03_summonjin as f03
+import commands.f04_hapusjin as f04
+import commands.f05_ubahjin as f05
+import commands.f06_bangun as f06
+import commands.f07_kumpul as f07
+import commands.f08_batchkumpulbangun as f08
+import commands.f09_laporanjin as f09
+import commands.f10_laporancandi as f10
+import commands.f11_hancurkancandi as f11
+import commands.f12_ayamberkokok as f12
+import commands.f13_load as f13
+import commands.f14_save as f14
+import commands.f15_help as f15
+import commands.f16_exit as f16
 
-def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
+def run(command, users, candi, bahan_bangunan, active_user, running):
    
    # Menampilkan list user
-   if inputan == "listuser":
+   if command == "listuser":
       N = arr_len(users)
       for i in range(1,N):
             print(users[i])
       return 0
    
    # Menampilkan list bahan
-   if inputan == "listbahan":
+   if command == "listbahan":
       N = arr_len(bahan_bangunan)
       for i in range(1,N):
             print(bahan_bangunan[i])
       return 0
    
    # Menampilkan list candi
-   if inputan == "listcandi":
+   if command == "listcandi":
       N = arr_len(candi)
       for i in range(1,N):
             print(candi[i])
       return 0
 
    # f01 Login
-   if inputan == "login":
+   if command == "login":
       if active_user[0] != 0:     # Jika sudah login, maka tidak bisa login
             print("Login gagal!")
             print(f"Anda telah login dengan username {active_user[0]}, silahkan lakukan “logout” sebelum melakukan login kembali.")
@@ -49,11 +49,11 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
             f01.login(users, active_user)
    
    # f02 Logout
-   elif inputan == "logout":
+   elif command == "logout":
       f02.logout(active_user)
    
    # f03 Summon Jin   
-   elif inputan == "summonjin":
+   elif command == "summonjin":
       if active_user[0] == "Bondowoso":
             if arr_len(users) > 103:
                print("Jumlah jin sudah mencapai batas maksimal!")
@@ -63,7 +63,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
             print("Kamu tidak memiliki akses untuk command summonjin!")
    
    # f04 Hapus Jin
-   elif inputan == "hapusjin":
+   elif command == "hapusjin":
       if active_user[0] == "Bondowoso":
          f04.hapusjin(active_user, users, candi)
       elif active_user[0] == 0:
@@ -72,7 +72,7 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
          print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah hapusjin")
    
    # f05 Ubah Jin
-   elif inputan == "ubahjin":
+   elif command == "ubahjin":
       if active_user[0] == "Bondowoso":
          f05.ubahjin(users)
       elif active_user[0] == 0:
@@ -81,69 +81,69 @@ def run(inputan, users, candi, bahan_bangunan, active_user, running_dict):
          print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah ubahjin")
 
    # f06 Bangun
-   elif inputan == "bangun":
+   elif command == "bangun":
       if active_user[1] == "Pembangun":
          f06.bangun(active_user, candi, bahan_bangunan)
       else:
          print(f"Kamu tidak memiliki akses untuk command bangun")
 
    # f07 Kumpul
-   elif inputan == "kumpul":
+   elif command == "kumpul":
       if active_user[1] == "Pengumpul":
          f07.kumpul(bahan_bangunan)
       else:
          print(f"Kamu tidak memiliki akses untuk command bangun")
    
    # f08 Batch Bangun
-   elif inputan == "batchbangun":
+   elif command == "batchbangun":
       print("command belum tersedia")
    
    # f08 Batch Kumpul
-   elif inputan == "batchkumpul":
-      print("command belum tersedia")
+   elif command == "batchkumpul":
+      f08.batchkumpul(users, bahan_bangunan)
 
    # f09 Laporan Jin
-   elif inputan == "laporanjin":
-      print("command belum tersedia")
+   elif command == "laporanjin":
+      f09.LaporanJin(users, candi, bahan_bangunan)
 
    # f10 Laporan Candi
-   elif inputan == "laporancandi":
-      print("command belum tersedia")
+   elif command == "laporancandi":
+      f10.LaporanCandi(candi)
 
    # f11 Hancurkan Candi
-   elif inputan == "hancurkancandi":
+   elif command == "hancurkancandi":
       f11.hancurkan(candi, active_user)
       
    # f12 Ayam Berkokok
-   elif inputan == "ayamberkokok":
+   elif command == "ayamberkokok":
       if active_user[0] == "Roro":
          f12.ayamberkokok(candi)
-         running_dict['value'] = False
+         running[0] = 0
       elif active_user[0] == 0:
          print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
       else:
          print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah ayamberkokok.")
 
    # f13 Load
-   elif inputan == "load":
+   elif command == "load":
       print("command belum tersedia")
 
    # f14 Save
-   elif inputan == "save":
+   elif command == "save":
       f14.save(users, candi, bahan_bangunan)
 
    # f15 Help
-   elif inputan == "help":
+   elif command == "help":
       f15.help(active_user)
 
    # f16 Exi
-   elif inputan == "exit":
+   elif command == "exit":
       f16.exit(users, candi, bahan_bangunan)
-      running_dict['value'] = False
+      running[0] = 0
 
    # Command tidak tersedia
    else:
-      print(f"Command \"{inputan}\" tidak tersedia.")
+      print(f"Command \"{command}\" tidak tersedia.")
       print("Masukkan command “help” untuk daftar command yang dapat kamu panggil.")
 
 

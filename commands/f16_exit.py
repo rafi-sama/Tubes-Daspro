@@ -1,4 +1,4 @@
-import function.f14_save as f14
+import commands.f14_save as f14
 def exit(users, candi, bahan_bangunan):
     choice = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)\n")
     while True:

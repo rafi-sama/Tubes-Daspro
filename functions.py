@@ -72,56 +72,75 @@ def arr_len(arr):
             arr[-1] = temp
             return i+1
 
+# mengubah format file .csv menjadi array
+def convertToArr(file, delimiter):
 
-def split(string, delimiter):
+    data = file.readlines()
+    row = arr_len(data)
 
-    # variabel yang menyatakan banyaknya pemisah (ex: titik koma pada file .csv)
-    NDelimiter = 0 
+    if row == 0:
+        return []
 
-    # banyaknya karakter pada string yang ingin di split
-    len = str_len(string) 
+    column = 1
+    for i in range(str_len(data[0])):
+        if data[0][i] == delimiter:
+            column += 1
 
-    # menghitung banyaknya separator
-    for i in range(len): 
-        if string[i] == delimiter:
-            NDelimiter += 1
-    
-    # array yang akan diisi dengan elemen string yang sudah di split
-    tempArr = ["" for i in range(NDelimiter + 1)]
+    tempArr = [[0 for i in range(column)] for i in range(row)]
 
-    # elemen pada array yang akan di split
-    tempElement = ""
+    for i in range(row):
 
-    # nomor kolom pada array yang akan diisi dengan tempElement
-    kolom = 0
+        temp = ""
+        insert_column = 0
 
-    # looping untuk mengecek tiap karakter pada string
-    for i in range(len):
+        for j in range(str_len(data[i])):
 
-        # jika pada looping ketemu separator
-        if string[i] == delimiter:
+            if ((data[i][j] != "\n") and (data[i][j] != delimiter)):
+
+                temp += data[i][j]
             
-            # tempElement di assign ke current kolom
-            tempArr[kolom] = tempElement
+            else:
 
-            # mereset nilai tempElement
-            tempElement = ""
+                tempArr[i][insert_column] = temp
 
-            # kolom berikutnya yang akan diisi
-            kolom += 1
+                temp = ""
+                insert_column += 1
 
-        # karena pada tempElement terakhir tidak ada seperator setelahnya
-        # untuk mengetahui string sudah habis digunakan len-1 dari string tersebut
-        elif i == len-1 :
-            
-            # tempElement di assign ke current kolom
-            tempArr[kolom] = tempElement
+    tempArr[row-1][column-1] = temp
 
-        # jika belum ketemu separator
-        else:
-
-            # karakter akan di tambahkan ke tempElement
-            tempElement += string[i]
-    
-    # mengeembalikan array yang berisi string yang sudah di split
     return tempArr
+
+# mengubah array menjadi string sesuai format file .csv
+def convertToCSV(arr):
+
+    string = ""
+
+    baris = arr_len(arr)
+    if baris == 0:
+        return string
+    
+    kolom = arr_len(arr[0])
+
+    for i in range(baris):
+        for j in range(kolom):
+
+            string += arr[i][j]
+
+            if j != kolom-1:
+
+                string += ";"
+
+        if i != baris-1:
+            string += "\n"
+
+    return string
+
+# fungsi isMember
+def isMember(element, arr):
+    
+    for i in range(arr_len(arr)):
+
+        if arr[i] == element:
+            return True
+        
+    return False
