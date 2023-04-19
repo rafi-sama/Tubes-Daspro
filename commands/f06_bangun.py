@@ -5,8 +5,8 @@ import random
 def isCukup(pasir, batu, air, bahan_bangunan):
 
     if ((pasir > int(bahan_bangunan[1][2]))\
-         or (batu > int(bahan_bangunan[2][2]))\
-              or (air > int(bahan_bangunan[3][2]))):
+        or (batu > int(bahan_bangunan[2][2]))\
+            or (air > int(bahan_bangunan[3][2]))):
         return False
     
     else:
@@ -14,9 +14,9 @@ def isCukup(pasir, batu, air, bahan_bangunan):
 
 def bangun(active_user, candi, bahan_bangunan):
 
-    pasir = b01.generate_angka_random()
-    batu = b01.generate_angka_random()
-    air = b01.generate_angka_random()
+    pasir = b01.generate_angka_random(0)
+    batu = b01.generate_angka_random(0)
+    air = b01.generate_angka_random(0)
 
     if isCukup(pasir, batu, air, bahan_bangunan):
 
