@@ -20,7 +20,7 @@ def konsDot(element, arr):
     temp = ["" for i in range(len+1)]
 
     for i in range(1, len+1):
-        temp[i] = arr[i]
+        temp[i] = arr[i-1]
     
     temp[0] = element
 
