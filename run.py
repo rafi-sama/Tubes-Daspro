@@ -96,6 +96,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running, trash):
    # f14 Save
    elif command == "save":
       f14.save(users, candi, bahan_bangunan)
+      trash[0] = []
 
    # f15 Help
    elif command == "help":
