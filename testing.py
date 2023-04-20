@@ -106,6 +106,10 @@
 #         if cur_score > max_score:
 #             max_score = cur_score
 #             max_id = cur_id
+
+# import commands.b01_randomgenerator as b1
+# while True:
+#     print(b1.generate_angka_random())
     
     
     

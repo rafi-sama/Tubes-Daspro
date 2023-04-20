@@ -23,5 +23,15 @@ while running[0] != 0:
 
     command = input(">>> ")
 
-    run(command,users,candi,bahan_bangunan,active_user,running)
+    users,\
+    candi,\
+    bahan_bagunanrun\
+          = run\
+                (command,\
+                users,\
+                candi,\
+                bahan_bangunan,\
+                active_user,\
+                running)
+
     print("\n", end="")

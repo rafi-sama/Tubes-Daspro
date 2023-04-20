@@ -1,8 +1,8 @@
 from functions import *
 
-def hancurkan(candi, active_user):
+def hancurkan(users, candi, bahan_bangunan, active_user):
    
-   if active_user[1] == "roro_jonggrang":
+    if active_user[1] == "roro_jonggrang":
    
         id = input("Masukkan ID candi: ")
             
@@ -16,9 +16,9 @@ def hancurkan(candi, active_user):
                 
         if ada_candi:
             
-            confirm = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)?")
-            while confirm != "Y" or confirm != "N":
-                confirm = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)?")
+            confirm = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)? ")
+            while not(confirm == "Y" or confirm == "N"):
+                confirm = input(f"Apakah anda yakin ingin menghancurkan candi ID: {id} (Y/N)? ")
 
             if confirm == "Y":
                 tempArr = [[0 for i in range(2)] for j in range(arr_len(candi)-1)]
@@ -30,7 +30,7 @@ def hancurkan(candi, active_user):
                     elif i > indeks:
                         tempArr[i-1] = candi[i]
                             
-                candi[:] = tempArr
+                candi = tempArr
                 
             else:
                 print(f"Batal menghancurkan candi ID: {id}")
@@ -38,5 +38,11 @@ def hancurkan(candi, active_user):
         else:
             print("Tidak ada candi dengan ID tersebut")
     
-   else:
-        print("Tidak memmiliki akses untuk command \"hancurkancandi\"")
+    elif active_user[1] == 0:
+        print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
+    
+    else:
+         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah hancurkancandi.")
+        
+    return users, candi, bahan_bangunan
+   

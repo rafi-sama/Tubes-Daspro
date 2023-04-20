@@ -59,18 +59,15 @@ def str_len(string):
 # fungsi yang menentukan panjang array
 def arr_len(arr):
 
-    if arr == []:
-        return 0
-    
-    temp = arr[-1]
-    arr[-1] = "*"
+    tempArr = []
+    length =  0
 
-    for i in range(1000):
+    while tempArr != arr:
 
-        if arr[i] == "*":
+        length += 1
+        tempArr = [arr[i] for i in range(length)]
 
-            arr[-1] = temp
-            return i+1
+    return length
 
 # mengubah format file .csv menjadi array
 def convertToArr(file, delimiter):

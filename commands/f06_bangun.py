@@ -1,6 +1,14 @@
 from functions import *
 import commands.b01_randomgenerator as b01
-import random
+
+def sortCandi(arr):
+
+    for i in range(1, arr_len(arr)):
+        for j in range(i, arr_len(arr)):
+            if int(arr[i][0]) > int(arr[j][0]):
+                arr[i], arr[j] = arr[j], arr[i]
+
+    return arr
 
 def isCukup(pasir, batu, air, bahan_bangunan):
 
@@ -12,7 +20,7 @@ def isCukup(pasir, batu, air, bahan_bangunan):
     else:
         return True
 
-def bangun(active_user, candi, bahan_bangunan):
+def bangun(users, candi, bahan_bangunan, active_user):
 
     pasir = b01.generate_angka_random()
     batu = b01.generate_angka_random()
@@ -20,27 +28,31 @@ def bangun(active_user, candi, bahan_bangunan):
 
     if isCukup(pasir, batu, air, bahan_bangunan):
 
-        tempBahan = bahan_bangunan
-        tempCandi = candi
+        bahan_bangunan[1][2] = str(int(bahan_bangunan[1][2])-pasir)
+        bahan_bangunan[2][2] = str(int(bahan_bangunan[2][2])-batu)
+        bahan_bangunan[3][2] = str(int(bahan_bangunan[3][2])-air)
 
-        tempBahan[1][2] = str(int(bahan_bangunan[1][2])-pasir)
-        tempBahan[2][2] = str(int(bahan_bangunan[2][2])-batu)
-        tempBahan[3][2] = str(int(bahan_bangunan[3][2])-air)
+        id_candi = 0 
 
-        id_candi = arr_len(tempCandi)
+        for i in range(1,arr_len(candi)):
+            if id_candi + 1 == int(candi[i][0]):
+                id_candi +=1
+            else:
+                break
+        id_candi += 1
 
-        tempCandi = konso(tempCandi, [str(id_candi), active_user[0], str(pasir), str(batu), str(air)])
-
-        candi[:] = tempCandi
-        bahan_bangunan[:] = tempBahan
+        if arr_len(candi) < 101:
+            candi = konso(candi, [str(id_candi), active_user[0], str(pasir), str(batu), str(air)])
+            candi = sortCandi(candi)
 
         sisa = 100-(arr_len(candi)-1)
 
         print("Candi berhasil dibangun.")
         print(f"Sisa candi yang perlu dibangun: {sisa}.")
 
-    
     else:
         print("Bahan bangunan tidak mencukupi.")
         print("Candi tidak bisa dibangun!")
+    
+    return users, candi, bahan_bangunan
     
