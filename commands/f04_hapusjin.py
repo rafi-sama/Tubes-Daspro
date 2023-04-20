@@ -1,5 +1,5 @@
 from functions import *
-def hapusjin(users, candi, bahan_bangunan, active_user):
+def hapusjin(users, candi, bahan_bangunan, active_user, trash):
 
     if active_user[1] == "bandung_bondowoso":
 
@@ -26,6 +26,8 @@ def hapusjin(users, candi, bahan_bangunan, active_user):
             while True:
                 if determine == "y" or determine == "Y":        # Jika pilihan y atau Y maka penghapusan terjadi, maka berikan output list_jin_baru dan list_candi_baru
                     print("Jin telah berhasil dihapus dari alam gaib.")
+
+                    trash[0] = konsDot([users, candi], trash[0])
 
                     return list_jin_baru, list_candi_baru, bahan_bangunan
             

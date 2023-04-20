@@ -10,6 +10,8 @@ users = [] # Matriks data user
 candi = [] # Matriks data candi
 bahan_bangunan = [] # Data bahan bangunan
 
+trash = [[]]
+
 # Mengisi users, candi, dan bahan_bangunan menggunakan file
 users = data.load(r"file\user.csv") # Matrix data user
 candi = data.load(r"file\candi.csv") # Matrix data user
@@ -32,6 +34,7 @@ while running[0] != 0:
                 candi,\
                 bahan_bangunan,\
                 active_user,\
-                running)
+                running,\
+                trash)
 
     print("\n", end="")

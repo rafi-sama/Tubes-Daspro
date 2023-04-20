@@ -15,8 +15,9 @@ import commands.f13_load as f13
 import commands.f14_save as f14
 import commands.f15_help as f15
 import commands.f16_exit as f16
+import commands.b04_undo as b04
 
-def run(command, users, candi, bahan_bangunan, active_user, running):
+def run(command, users, candi, bahan_bangunan, active_user, running, trash):
    
    # Menampilkan list user
    if command == "listuser":
@@ -50,7 +51,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running):
       
    # f04 Hapus Jin
    elif command == "hapusjin":
-      users, candi, bahan_bangunan = f04.hapusjin(users, candi, bahan_bangunan, active_user)
+      users, candi, bahan_bangunan = f04.hapusjin(users, candi, bahan_bangunan, active_user, trash)
 
    # f05 Ubah Jin
    elif command == "ubahjin":
@@ -100,10 +101,13 @@ def run(command, users, candi, bahan_bangunan, active_user, running):
    elif command == "help":
       f15.help(active_user)
 
-   # f16 Exi
+   # f16 Exit
    elif command == "exit":
       f16.exit(users, candi, bahan_bangunan)
       running[0] = 0
+
+   elif command == "undo":
+      users, candi, bahan_bangunan = b04.undo(users, candi, bahan_bangunan, active_user, trash)
 
    # Command tidak tersedia
    else:
