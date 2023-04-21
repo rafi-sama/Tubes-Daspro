@@ -17,7 +17,7 @@ def LaporanJin (list_jin,users, candi):
     J_total = J_bangun + J_kumpul
     
     count = {}
-    for i in range(1, len(candi)):
+    for i in range(1, arr_len(candi)):
         if candi[i][1] in count:       #Menghitung Jumlah Kemunculan semua data di kolom kedua dalam list candi, yaitu nama jin
             count[candi[i][1]] += 1
         else:
@@ -61,7 +61,7 @@ def LaporanJin (list_jin,users, candi):
     total_batu = 0                    #semua bahan-bahan dibikin 0 dulu
     total_air = 0
 
-    for row in candi[1:]:
+    for row in range (1, arr_len):
         total_pasir += int(row[2])
         total_batu += int(row[3])           #iterasi dari baris kedua hingga akhir dalam candi, dimana tiap data
         total_air += int(row[4])            #dari kolom tersebut ditambahkan
