@@ -81,7 +81,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running, trash):
          print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
    # f10 Laporan Candi
    elif command == "laporancandi":
-      f10.LaporanCandi(candi)
+      f10.laporancandi(candi)
 
    # f11 Hancurkan Candi
    elif command == "hancurkancandi":
