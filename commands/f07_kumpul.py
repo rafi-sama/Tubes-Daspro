@@ -4,9 +4,9 @@ def kumpul(users, candi, bahan_bangunan, active_user): #Fungsi mengumpulkan baha
     
     if active_user[1] == "Pengumpul":
     
-        pasir = b01.generate_angka_random() #mengambil secara random jumlah pasir
-        batu = b01.generate_angka_random() #mengambil secara random jumlah batu
-        air = b01.generate_angka_random() #mengambil secara random jumlah air
+        pasir = b01.generate_angka_random(0) #mengambil secara random jumlah pasir
+        batu = b01.generate_angka_random(0) #mengambil secara random jumlah batu
+        air = b01.generate_angka_random(0) #mengambil secara random jumlah air
         bahan_bangunan[1][2] = str(int(bahan_bangunan[1][2]) + pasir) #menambahkan pasir yang diambil ke list bahan bangunan
         bahan_bangunan[2][2] = str(int(bahan_bangunan[2][2]) + batu) #menambahkan batu yang diambil ke list bahan bangunan
         bahan_bangunan[3][2] = str(int(bahan_bangunan[3][2]) + air) #menambahkan air yang diambil ke list bahan bangunan

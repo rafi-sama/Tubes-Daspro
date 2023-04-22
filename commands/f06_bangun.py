@@ -22,9 +22,9 @@ def isCukup(pasir, batu, air, bahan_bangunan):
 
 def bangun(users, candi, bahan_bangunan, active_user):
 
-    pasir = b01.generate_angka_random()
-    batu = b01.generate_angka_random()
-    air = b01.generate_angka_random()
+    pasir = b01.generate_angka_random(1)
+    batu = b01.generate_angka_random(1)
+    air = b01.generate_angka_random(1)
 
     if isCukup(pasir, batu, air, bahan_bangunan):
 
