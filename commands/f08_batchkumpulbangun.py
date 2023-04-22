@@ -38,7 +38,7 @@ def batchkumpul(users,candi, bahan_bangunan, active_user):
         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
     
     else:
-         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah batchbangun.")
+        print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah batchbangun.")
         
     return users, candi, bahan_bangunan
         
@@ -53,6 +53,7 @@ def batchbangun(users,candi, bahan_bangunan, active_user):
                 pembangun += 1
                 list_jin = konso(list_jin, users[i])
         
+        bahan_lama = [bahan_bangunan[i] for i in range(arr_len(bahan_bangunan))]
         bahan_baru = [bahan_bangunan[i] for i in range(arr_len(bahan_bangunan))]
         candi_baru = [candi[i] for i in range(arr_len(candi))]
         pasir_total = 0
@@ -96,35 +97,35 @@ def batchbangun(users,candi, bahan_bangunan, active_user):
 
                 else:
                     gagal += 1
-                    break
 
             if gagal != 0:
-                if pasir_total - int(bahan_baru[1][2]) < 0:
+                if pasir_total - int(bahan_lama[1][2]) < 0:
                     pasir_sisa = 0
                 else:
                     pasir_sisa = pasir_total - int(bahan_baru[1][2])
-                if batu_total - int(bahan_baru[2][2]) < 0:
+                if batu_total - int(bahan_lama[2][2]) < 0:
                     batu_sisa = 0
                 else:
                     batu_sisa = batu_total - int(bahan_baru[2][2])
-                if air_total - int(bahan_baru[3][2]) < 0:
+                if air_total - int(bahan_lama[3][2]) < 0:
                     air_sisa = 0
                 else:
-                    air_sisa = air_total - int(bahan_baru[3][2])
+                    air_sisa = air_total - int(bahan_lama[3][2])
                 print(f"Mengerahkan {pembangun} jin untuk membangun candi dengan total bahan {pasir_total} pasir, {batu_total} batu, dan {air_total} air.")
                 print(f"Bangun gagal. Kurang {pasir_sisa} pasir, {batu_sisa} batu, dan {air_sisa} air.")
-
+                return users, candi_baru, bahan_lama
             else:
+                bahan_lama[1][2] = int(bahan_lama[1][2]) - pasir_total
+                bahan_lama[2][2] = int(bahan_lama[2][2]) - batu_total
+                bahan_lama[3][2] = int(bahan_lama[3][2]) - air_total
                 print(f"Mengerahkan {pembangun} jin untuk membangun candi dengan total bahan {pasir_total} pasir, {batu_total} batu, dan {air_total} air.")
                 print(f"Jin berhasil membangun total {total_candi} candi.")
-
                 return users, candi_baru, bahan_baru
             
     elif active_user[1] == 0:
         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
     
     else:
-         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah batchbangun.")
+        print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah batchbangun.")
         
     return users, candi, bahan_bangunan
-   
