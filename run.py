@@ -67,7 +67,10 @@ def run(command, users, candi, bahan_bangunan, active_user, running, trash):
    
    # f08 Batch Bangun
    elif command == "batchbangun":
-      print("command belum tersedia")
+      if active_user[1] == "bandung_bondowoso":
+         f08.batchbangun(users, candi, bahan_bangunan, active_user)
+      else:
+         print(f"User dengan username {active_user[1]} tidak memiliki akses terhadap command batchbangun!")
    
    # f08 Batch Kumpul
    elif command == "batchkumpul":
