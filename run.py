@@ -75,8 +75,10 @@ def run(command, users, candi, bahan_bangunan, active_user, running, trash):
    
    # f09 Laporan Jin
    elif command == "laporanjin":
-      f09.LaporanJin(users, candi, bahan_bangunan)
-
+      if active_user[1] == "bandung_bondowoso":
+         f09.laporanjin(users ,candi, bahan_bangunan)
+      else:
+         print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
    # f10 Laporan Candi
    elif command == "laporancandi":
       f10.LaporanCandi(candi)
