@@ -141,3 +141,11 @@ def isMember(element, arr):
             return True
         
     return False
+
+def sorting_arr_leks(arr):
+    n = arr_len(arr)
+    for i in range(n - 1):
+        for j in range(i + 1, n):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr

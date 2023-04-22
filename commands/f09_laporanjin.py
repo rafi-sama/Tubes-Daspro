@@ -40,7 +40,11 @@ def laporanjin(users, candi, bahan_bangunan):
             jumlah_terbanyak_sama += 1
             
     if jumlah_terbanyak_sama > 1:
-        pembuat_terbanyak = "-"
+        nama_pembuat_terbanyak = []
+        for i in range(len(nama_pembuat)):
+            if jumlah_pembuatan[i] == jumlah_pembuatan_terbanyak:
+                nama_pembuat_terbanyak = konso(nama_pembuat_terbanyak, nama_pembuat[i])
+        pembuat_terbanyak = sorting_arr_leks(nama_pembuat_terbanyak)[0]
 
     # mencari pembuat dengan pembuatan terkecil
     pembuat_terkecil = ''
@@ -58,6 +62,14 @@ def laporanjin(users, candi, bahan_bangunan):
             jumlah_terkecil_sama += 1
 
     if jumlah_terkecil_sama > 1:
+        nama_pembuat_terkecil = []
+        for i in range(len(nama_pembuat)):
+            if jumlah_pembuatan[i] == jumlah_pembuatan_terkecil:
+                nama_pembuat_terkecil = konso(nama_pembuat_terkecil, nama_pembuat[i])
+        pembuat_terkecil = sorting_arr_leks(nama_pembuat_terkecil)[arr_len(nama_pembuat)-1]
+
+    if pembangun == 0:
+        pembuat_terbanyak = "-"
         pembuat_terkecil = "-"
 
     print(f"Total Jin: {pengumpul + pembangun}")
@@ -65,9 +77,9 @@ def laporanjin(users, candi, bahan_bangunan):
     print(f"Total Jin Pembangun: {pembangun}")
     print(f"Jin Terajin: {pembuat_terbanyak}")
     print(f"Jin Termalas: {pembuat_terkecil}")
-    print(f"Jumlah Pasir: {bahan_bangunan[1][2]}")
-    print(f"Jumlah Air: {bahan_bangunan[3][2]}")
-    print(f"Jumlah Batu: {bahan_bangunan[2][2]}")
+    print(f"Jumlah Pasir: {bahan_bangunan[1][2]} unit")
+    print(f"Jumlah Air: {bahan_bangunan[3][2]} unit")
+    print(f"Jumlah Batu: {bahan_bangunan[2][2]} unit")
 # def LaporanJin (list_jin,users, candi):
 #     J_bangun = 0
 #     J_kumpul = 0
