@@ -22,37 +22,46 @@ def isCukup(pasir, batu, air, bahan_bangunan):
 
 def bangun(users, candi, bahan_bangunan, active_user):
 
-    pasir = b01.generate_angka_random(1)
-    batu = b01.generate_angka_random(1)
-    air = b01.generate_angka_random(1)
+    if active_user[1] == "Pembangun":
 
-    if isCukup(pasir, batu, air, bahan_bangunan):
+        pasir = b01.generate_angka_random(1)
+        batu = b01.generate_angka_random(1)
+        air = b01.generate_angka_random(1)
 
-        bahan_bangunan[1][2] = str(int(bahan_bangunan[1][2])-pasir)
-        bahan_bangunan[2][2] = str(int(bahan_bangunan[2][2])-batu)
-        bahan_bangunan[3][2] = str(int(bahan_bangunan[3][2])-air)
+        if isCukup(pasir, batu, air, bahan_bangunan):
 
-        id_candi = 0 
+            bahan_bangunan[1][2] = str(int(bahan_bangunan[1][2])-pasir)
+            bahan_bangunan[2][2] = str(int(bahan_bangunan[2][2])-batu)
+            bahan_bangunan[3][2] = str(int(bahan_bangunan[3][2])-air)
 
-        for i in range(1,arr_len(candi)):
-            if id_candi + 1 == int(candi[i][0]):
-                id_candi +=1
-            else:
-                break
-        id_candi += 1
+            id_candi = 0 
 
-        if arr_len(candi) < 101:
-            candi = konso(candi, [str(id_candi), active_user[0], str(pasir), str(batu), str(air)])
-            candi = sortCandi(candi)
+            for i in range(1,arr_len(candi)):
+                if id_candi + 1 == int(candi[i][0]):
+                    id_candi +=1
+                else:
+                    break
+            id_candi += 1
 
-        sisa = 100-(arr_len(candi)-1)
+            if arr_len(candi) < 101:
+                candi = konso(candi, [str(id_candi), active_user[0], str(pasir), str(batu), str(air)])
+                candi = sortCandi(candi)
 
-        print("Candi berhasil dibangun.")
-        print(f"Sisa candi yang perlu dibangun: {sisa}.")
+            sisa = 100-(arr_len(candi)-1)
 
-    else:
-        print("Bahan bangunan tidak mencukupi.")
-        print("Candi tidak bisa dibangun!")
+            print("Candi berhasil dibangun.")
+            print(f"Sisa candi yang perlu dibangun: {sisa}.")
+
+        else:
+            print("Bahan bangunan tidak mencukupi.")
+            print("Candi tidak bisa dibangun!")
     
+ 
+    elif active_user[1] == 0:
+        print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
+    
+    else:
+         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah kumpul.")
+        
     return users, candi, bahan_bangunan
     
