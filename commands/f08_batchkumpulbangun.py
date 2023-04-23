@@ -114,7 +114,7 @@ def batchbangun(users,candi, bahan_bangunan, active_user):
                     air_sisa = air_total - int(bahan[3][2])
                 print(f"Mengerahkan {pembangun} jin untuk membangun candi dengan total bahan {pasir_total} pasir, {batu_total} batu, dan {air_total} air.")
                 print(f"Bangun gagal. Kurang {pasir_sisa} pasir, {batu_sisa} batu, dan {air_sisa} air.")
-                return users, candi_baru, bahan
+                return users, candi, bahan_bangunan
             else:
                 bahan[1][2] = int(bahan[1][2]) - pasir_total
                 bahan[2][2] = int(bahan[2][2]) - batu_total
