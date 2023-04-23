@@ -121,7 +121,7 @@ def convertToCSV(arr):
     for i in range(baris):
         for j in range(kolom):
 
-            string += arr[i][j]
+            string += str(arr[i][j])
 
             if j != kolom-1:
 
