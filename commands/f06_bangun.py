@@ -61,7 +61,7 @@ def bangun(users, candi, bahan_bangunan, active_user):
         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
     
     else:
-         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah kumpul.")
+         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah bangun.")
         
     return users, candi, bahan_bangunan
     
