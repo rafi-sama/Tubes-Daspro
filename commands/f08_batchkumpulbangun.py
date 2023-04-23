@@ -53,7 +53,7 @@ def batchbangun(users,candi, bahan_bangunan, active_user):
                 pembangun += 1
                 list_jin = konso(list_jin, users[i])
         
-        bahan_lama = [bahan_bangunan[i] for i in range(arr_len(bahan_bangunan))]
+        bahan = [bahan_bangunan[i] for i in range(arr_len(bahan_bangunan))]
         bahan_baru = [bahan_bangunan[i] for i in range(arr_len(bahan_bangunan))]
         candi_baru = [candi[i] for i in range(arr_len(candi))]
         pasir_total = 0
@@ -94,30 +94,31 @@ def batchbangun(users,candi, bahan_bangunan, active_user):
                     if arr_len(candi_baru) < 101:
                         candi_baru = konso(candi_baru, [str(id_candi), str(list_jin[j][0]), str(pasir), str(batu), str(air)])
                         candi_baru = sortCandi(candi_baru)
-
+                    bahan = bahan_baru
                 else:
+                    bahan = bahan
                     gagal += 1
 
             if gagal != 0:
-                if pasir_total - int(bahan_lama[1][2]) < 0:
+                if pasir_total - int(bahan[1][2]) < 0:
                     pasir_sisa = 0
                 else:
-                    pasir_sisa = pasir_total - int(bahan_baru[1][2])
-                if batu_total - int(bahan_lama[2][2]) < 0:
+                    pasir_sisa = pasir_total - int(bahan[1][2])
+                if batu_total - int(bahan[2][2]) < 0:
                     batu_sisa = 0
                 else:
-                    batu_sisa = batu_total - int(bahan_baru[2][2])
-                if air_total - int(bahan_lama[3][2]) < 0:
+                    batu_sisa = batu_total - int(bahan[2][2])
+                if air_total - int(bahan[3][2]) < 0:
                     air_sisa = 0
                 else:
-                    air_sisa = air_total - int(bahan_lama[3][2])
+                    air_sisa = air_total - int(bahan[3][2])
                 print(f"Mengerahkan {pembangun} jin untuk membangun candi dengan total bahan {pasir_total} pasir, {batu_total} batu, dan {air_total} air.")
                 print(f"Bangun gagal. Kurang {pasir_sisa} pasir, {batu_sisa} batu, dan {air_sisa} air.")
-                return users, candi_baru, bahan_lama
+                return users, candi_baru, bahan
             else:
-                bahan_lama[1][2] = int(bahan_lama[1][2]) - pasir_total
-                bahan_lama[2][2] = int(bahan_lama[2][2]) - batu_total
-                bahan_lama[3][2] = int(bahan_lama[3][2]) - air_total
+                bahan[1][2] = int(bahan[1][2]) - pasir_total
+                bahan[2][2] = int(bahan[2][2]) - batu_total
+                bahan[3][2] = int(bahan[3][2]) - air_total
                 print(f"Mengerahkan {pembangun} jin untuk membangun candi dengan total bahan {pasir_total} pasir, {batu_total} batu, dan {air_total} air.")
                 print(f"Jin berhasil membangun total {total_candi} candi.")
                 return users, candi_baru, bahan_baru
