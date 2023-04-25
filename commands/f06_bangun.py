@@ -12,13 +12,7 @@ def sortCandi(arr):
 
 def isCukup(pasir, batu, air, bahan_bangunan):
 
-    if ((pasir > int(bahan_bangunan[1][2]))\
-         or (batu > int(bahan_bangunan[2][2]))\
-              or (air > int(bahan_bangunan[3][2]))):
-        return False
-    
-    else:
-        return True
+    return ((pasir <= int(bahan_bangunan[1][2])) and (batu <= int(bahan_bangunan[2][2])))and (air <= int(bahan_bangunan[3][2]))
 
 def bangun(users, candi, bahan_bangunan, active_user):
 
