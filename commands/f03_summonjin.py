@@ -1,4 +1,5 @@
 from functions import *
+import commands.b05_gambar as b05
 def summonjin(users, candi, bahan_bangunan, active_user):
 
     if active_user[1] == "bandung_bondowoso":
@@ -69,7 +70,7 @@ def summonjin(users, candi, bahan_bangunan, active_user):
                 N = str_len(password_jin_input)
                 
             users = konso(users, [nama_jin_input, password_jin_input, jenis_jin[int(nomor_jin_input)-1]])
-
+            b05.gambarjin()
     else:
             print("Kamu tidak memiliki akses untuk command summonjin!")
 

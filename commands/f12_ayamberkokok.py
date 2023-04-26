@@ -1,5 +1,5 @@
 from functions import *
-
+import commands.b05_gambar as b05
 def ayamberkokok(users, candi, bahan_bangunan, active_user, running):
 
     # Jika user yang aktif adalah Roro Jonggrang
@@ -7,13 +7,13 @@ def ayamberkokok(users, candi, bahan_bangunan, active_user, running):
         
         N = arr_len(candi)-1    # Hitung banyak candi
         if N < 100: # Jika candi kurang dari 100, maka Roro Jonggrang menang
-            print("Kukuruyuk.. Kukuruyuk.. \n")
+            b05.gambarayam()
             print(f"Jumlah candi: {N} \n")
             print("Selamat, Roro Jonggrang memenangkan permainan! \n")
             print("*Bandung Bondowoso angry noise*")
             print("Roro Jonggrang dikutuk menjadi candi.")
         else:   # Jika candi sudah 100, maka Bandung Bondowoso menang
-            print("Kukuruyuk.. Kukuruyuk.. \n")
+            b05.gambarayam()
             print(f"Jumlah candi: {N} \n")
             print("Yah, Bandung Bondowoso memenangkan permainan!")
 

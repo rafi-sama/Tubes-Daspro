@@ -1,7 +1,7 @@
 from commands.f06_bangun import *
 import commands.b01_randomgenerator as b01
 from functions import *
-
+import commands.b05_gambar as b05
 # Fungsi batchkumpul
 def batchkumpul(users,candi, bahan_bangunan, active_user):
 
@@ -126,7 +126,7 @@ def batchbangun(users, candi, bahan, active_user):
         bahan[1][2] = int(bahan[1][2]) - sumPasir
         bahan[2][2] = int(bahan[2][2]) - sumBatu
         bahan[3][2] = int(bahan[3][2]) - sumAir
-            
+        b05.gambarcandi()
         print(f"Jin berhasil membangun total {NPembangun} candi.")
         
     elif active_user[1] == 0:

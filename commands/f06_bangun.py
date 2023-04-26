@@ -1,6 +1,6 @@
 from functions import *
 import commands.b01_randomgenerator as b01
-
+import commands.b05_gambar as b05
 def sortCandi(arr):
 
     for i in range(1, arr_len(arr)):
@@ -49,7 +49,7 @@ def bangun(users, candi, bahan_bangunan, active_user):
 
             sisa = 100-(arr_len(candi)-1)
 
-            print("Candi berhasil dibangun.")
+            b05.gambarcandi()
             print(f"Sisa candi yang perlu dibangun: {sisa}.")
 
         else:
