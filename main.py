@@ -12,9 +12,9 @@ active_user = [0,0] # Untuk menentukan apakah ada user yang sedang login atau ti
 users = [] # Matriks data user
 candi = [] # Matriks data candi
 bahan_bangunan = [] # Data bahan bangunan
-running = [1]
+running = [1] # Untuk menghentikan program
 
-# Gunakan metode argparse untuk 
+# Gunakan metode argparse untuk melakukan load data 
 if __name__ == '__main__':
       # Menerima argumen saat menjalankan file python menggunakan argparse
       parser = argparse.ArgumentParser(description='Load data from external data structure')
