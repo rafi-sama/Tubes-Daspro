@@ -77,7 +77,7 @@ def LaporanCandi (candi):
         print("Total Batu yang digunakan: 0")
         print("Total Air yang digunakan: 0")
         print("ID Candi Termahal: -")
-        print("ID Candi Termurah: -")
+        print(f"ID Candi Termurah: -")
     
         
     

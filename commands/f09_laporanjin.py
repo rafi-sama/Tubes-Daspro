@@ -1,6 +1,9 @@
 from functions import *
 
-def LaporanJin (list_jin,users, candi):
+def LaporanJin (users, candi):
+    global list_jin
+    
+
     J_bangun = 0
     J_kumpul = 0
     i = 3
@@ -16,41 +19,68 @@ def LaporanJin (list_jin,users, candi):
         
     J_total = J_bangun + J_kumpul
     
-    count = {}
-    for i in range(1, arr_len(candi)):
-        if candi[i][1] in count:       #Menghitung Jumlah Kemunculan semua data di kolom kedua dalam list candi, yaitu nama jin
-            count[candi[i][1]] += 1
-        else:
-            count[candi[i][1]] = 1
-
-
-    max_count = 0
-    J_rajin = []
-    for g in count:
-        if count[g] > max_count:
-            max_count = count[g]     # Mencari nama jin dengan jumlah kemunculan terbanyak
-            J_rajin = [g]
-        
-        elif count[g] == max_count:
-            konso([J_rajin],g)
+    
             
-    if len(J_rajin) > 1:     #syarat jin ter-rajin yang didapat lebih dari satu
+    list_jin = [candi[i][1] for i in range(1, arr_len(candi))]    # Berisi Kemunculan semua data di kolom kedua dalam list candi, yaitu nama jin
+
+
+    
+
+    # membuat list unik dari list_jin
+    data_unik = []
+    for i in range(arr_len(list_jin)):
+        is_unik = True
+    for j in range(arr_len(data_unik)):
+        if list_jin[i] == data_unik[j]:
+            is_unik = False
+            break
+    if is_unik:
+        data_unik = data_unik + [list_jin[i]]
+
+    # menghitung jumlah kemunculan masing-masing data pada list_jin
+    jumlah_kemunculan = [0] * arr_len(data_unik)
+    for i, data in enumerate(data_unik):
+        for j in range(arr_len(list_jin)):
+            if list_jin[j] == data:
+                jumlah_kemunculan[i] += 1
+
+    # mencari data dengan kemunculan terbanyak
+    max_kemunculan = max(jumlah_kemunculan)
+    J_rajin = []
+    for i in range(arr_len(jumlah_kemunculan)):
+        if jumlah_kemunculan[i] == max_kemunculan:
+            J_rajin += [data_unik[i]]
+
+    # mencari data dengan kemunculan terendah
+    min_kemunculan = min(jumlah_kemunculan)
+    J_malas = []
+    for i in range(arr_len(jumlah_kemunculan)):
+        if jumlah_kemunculan[i] == min_kemunculan:
+            J_malas += [data_unik[i]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if arr_len(J_rajin) > 1:     #syarat jin ter-rajin yang didapat lebih dari satu
         awal = J_rajin[0]       # menentukan leksiografis terendah dari list jin ter-rajin
         for item in J_rajin:
             if item < awal:
                 awal = item
                 
-    min_count = float("inf")        #mencari nama jin dengan jumlah kemunculan terkecil
-    J_malas = []
-    for g in count:
-        if count[g] < min_count:
-            min_count = count[g]
-        
-        elif count[g] == min_count:
-            konso([J_malas],g)
+
             
             
-    if len(J_malas) > 1:        # jika jin termalas yang didapat lebih dari satu
+    if arr_len(J_malas) > 1:        # jika jin termalas yang didapat lebih dari satu
         awal = J_malas[0]       # menentukan leksiografis tertinggi dari list jin termalas
         for item in J_malas:
             if item > awal:
