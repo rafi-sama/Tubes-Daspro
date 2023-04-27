@@ -1,4 +1,10 @@
 nama;deskripsi;jumlah
+<<<<<<< Updated upstream
 pasir;sand;0
 batu;rock;0
 air;water;0
+=======
+pasir;kering;56
+batu;solid;45
+air;cair;34
+>>>>>>> Stashed changes
