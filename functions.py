@@ -20,7 +20,7 @@ def konsDot(element, arr):
     temp = ["" for i in range(len+1)]
 
     for i in range(1, len+1):
-        temp[i] = arr[i]
+        temp[i] = arr[i-1]
     
     temp[0] = element
 
@@ -59,18 +59,15 @@ def str_len(string):
 # fungsi yang menentukan panjang array
 def arr_len(arr):
 
-    if arr == []:
-        return 0
-    
-    temp = arr[-1]
-    arr[-1] = "*"
+    tempArr = []
+    length =  0
 
-    for i in range(1000):
+    while tempArr != arr:
 
-        if arr[i] == "*":
+        length += 1
+        tempArr = [arr[i] for i in range(length)]
 
-            arr[-1] = temp
-            return i+1
+    return length
 
 # mengubah format file .csv menjadi array
 def convertToArr(file, delimiter):
@@ -124,7 +121,7 @@ def convertToCSV(arr):
     for i in range(baris):
         for j in range(kolom):
 
-            string += arr[i][j]
+            string += str(arr[i][j])
 
             if j != kolom-1:
 
@@ -144,3 +141,11 @@ def isMember(element, arr):
             return True
         
     return False
+
+def sorting_arr_leks(arr):
+    n = arr_len(arr)
+    for i in range(n - 1):
+        for j in range(i + 1, n):
+            if arr[i] > arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
+    return arr
