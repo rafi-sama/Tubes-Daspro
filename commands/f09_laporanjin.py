@@ -86,6 +86,11 @@ def LaporanJin (users, candi):
             if item > awal:
                 awal = item
 
+
+
+
+
+
 def laporanjin(users, candi, bahan_bangunan, active_user):    #qika
     if active_user[1] == "bandung_bondowoso":
         nama_pembuat = []
