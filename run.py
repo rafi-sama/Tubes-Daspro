@@ -104,7 +104,7 @@ def run(command, users, candi, bahan_bangunan, active_user, running, trash):
 
    # f16 Exit
    elif command == "exit":
-      users, candi, bahan_bangunan, running = f16.exit(users, candi, bahan_bangunan, running)
+      users, candi, bahan_bangunan, running = f16.exit(users, candi, bahan_bangunan, running, trash)
 
    elif command == "undo":
       users, candi, bahan_bangunan = b04.undo(users, candi, bahan_bangunan, active_user, trash)
