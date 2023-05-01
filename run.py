@@ -75,7 +75,13 @@ def run(command, users, candi, bahan_bangunan, active_user, running, trash):
    
    # f09 Laporan Jin
    elif command == "laporanjin":
-      users ,candi, bahan_bangunan = f09.laporanjin(users ,candi, bahan_bangunan, active_user)
+      if active_user[1] == "bandung_bondowoso":
+         users ,candi, bahan_bangunan = f09.laporanjin(users ,candi, bahan_bangunan, active_user)
+      elif active_user[1] == 0:
+         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
+      else:
+         print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah batchbangun.")
+
    # f10 Laporan Candi
    elif command == "laporancandi":
       users, candi, bahan_bangunan = f10.laporancandi(users, candi, bahan_bangunan)
