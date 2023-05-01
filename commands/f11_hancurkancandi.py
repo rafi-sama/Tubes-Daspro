@@ -29,7 +29,7 @@ def hancurkan(users, candi, bahan_bangunan, active_user):
                         tempArr[i-1] = candi[i]
                             
                 candi = tempArr
-                print(f"Candi dengan ID {id} berhasil dihancurkan")
+                print(f"Candi dengan ID {id} berhasil dihancurkan!")
             else:
                 print(f"Batal menghancurkan candi ID: {id}")
             
