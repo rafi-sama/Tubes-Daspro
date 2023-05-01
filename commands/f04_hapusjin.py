@@ -22,7 +22,7 @@ def hapusjin(users, candi, bahan_bangunan, active_user, trash):
                 if username_jin != candi[j][1]:    # bila candi bukan buatan jin yang dihapus, maka masukkan candi ke list_candi__baru
                     list_candi_baru = konso(list_candi_baru, candi[j])
                     
-            determine = input("Apakah anda yakin ingin menghapus jin dengan username Jin1 (Y/N)? ") # Input konfirmasi penghapusan
+            determine = input(f"Apakah anda yakin ingin menghapus jin dengan username {username_jin} (Y/N)? ") # Input konfirmasi penghapusan
             while True:
                 if determine == "y" or determine == "Y":        # Jika pilihan y atau Y maka penghapusan terjadi, maka berikan output list_jin_baru dan list_candi_baru
                     print("Jin telah berhasil dihapus dari alam gaib.")
@@ -43,6 +43,6 @@ def hapusjin(users, candi, bahan_bangunan, active_user, trash):
         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
     
     else:
-        print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah bangun.")
+        print(f"User dengan username {active_user[0]} tidak memiliki akses terhadap perintah hapusjin.")
         
     return users, candi, bahan_bangunan
