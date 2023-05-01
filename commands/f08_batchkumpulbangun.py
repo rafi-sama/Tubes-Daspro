@@ -128,7 +128,7 @@ def batchbangun(users, candi, bahan, active_user):
         bahan[3][2] = int(bahan[3][2]) - sumAir
         b05.gambarcandi()
         print(f"Jin berhasil membangun total {NPembangun} candi.")
-        
+        print(f"Sisa candi yang perlu di bangun: {100-(arr_len(candi)-1)}")
     elif active_user[1] == 0:
         print("Silahkan login dahulu sebelum menggunakan perintah tersebut!")
     

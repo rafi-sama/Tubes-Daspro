@@ -9,30 +9,7 @@ def laporancandi(users, candi, bahan_bangunan):
     list_candi = []
     list_harga = []
     for i in range(1, arr_len(candi)):
-
-        cur_id = candi[i][0]
-        cur_pasir = int(candi[i][2])
-        cur_batu = int(candi[i][3])
-        cur_air = int(candi[i][4])
-
-        cur_score = cur_pasir + cur_batu + cur_air
-
-        if cur_score > max_score:
-            max_score = cur_score
-            max_id = cur_id
-    
-    
-    if candi == 0 or []:
-        print("Total Candi: 0")
-        print("Total Pasir yang digunakan: 0")
-        print("Total Batu yang digunakan: 0")
-        print("Total Air yang digunakan: 0")
-        print("ID Candi Termahal: -")
-        print(f"ID Candi Termurah: -")
-    
-
         total_candi += 1
-
         
     for i in range(1,arr_len(candi)):
         total_pasir += int(candi[i][2])
@@ -57,6 +34,7 @@ def laporancandi(users, candi, bahan_bangunan):
         if harga_termurah > list_harga[i]:
             harga_termurah = list_harga[i]
             id_temurah = list_candi[i]
+        
     if total_candi == 0:
         print(f"Total Candi: {total_candi}")
         print(f"Total Pasir yang digunakan: {total_pasir}")
